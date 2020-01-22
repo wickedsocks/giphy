@@ -1,0 +1,15 @@
+<div>
+  <nav aria-label="Page navigation example">
+    <ul class="pagination">
+      <li class="page-item" (click)='goToPage(firstPage)'><a class="page-link" >1</a></li>
+      <ng-container *ngFor='let pageNumber of availableButtonsCount'>
+        <li class="page-item" (click)='goToPage(pageCountDueToOffset + pageNumber)' >
+        <a class="page-link" *ngIf='pageNumber !== 1 
+        && pageNumber + pageCountDueToOffset !== pagesAmount 
+        && pageNumber + pageCountDueToOffset <= pagesAmount'>{{pageCountDueToOffset + pageNumber}}</a>
+        </li>
+      </ng-container>
+      <li class="page-item" (click)='goToPage(pagesAmount)'><a class="page-link" >{{pagesAmount}}</a></li>
+    </ul>
+  </nav>
+</div>

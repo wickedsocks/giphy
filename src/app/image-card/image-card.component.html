@@ -1,0 +1,8 @@
+<div class="card card-wrapper">
+  <img [src]="image.images.fixed_width_downsampled.url" class="card-img-top" />
+  <div class="card-body">
+    <h5 class="card-title" *ngIf="image">
+      {{ image.title ? image.title : "No title for gif" }}
+    </h5>
+  </div>
+</div>
