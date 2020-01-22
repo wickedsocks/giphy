@@ -16,9 +16,6 @@ export class ApikeyInterceptorService implements HttpInterceptor {
     });
     return next.handle(reqClone).pipe(
       tap(
-        event => {
-          if (event instanceof HttpResponse) { console.log('Server response'); }
-        },
         err => {
           if (err instanceof HttpErrorResponse) {
             if (err.status === 401) { console.log('Unauthorized'); }
