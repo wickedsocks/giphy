@@ -37,7 +37,6 @@ export class PaginationButtonsComponent implements OnInit, OnChanges {
   goToPage(pageNumber) {
     this.activePageNumber = pageNumber;
     this.pageChanged.emit(pageNumber);
-    console.log('this.activePageNumber ', this.activePageNumber);
   }
 
 }
