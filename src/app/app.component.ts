@@ -35,7 +35,6 @@ export class AppComponent implements OnInit {
       this.trendingGifs = result.data;
       this.totalCount = result.pagination.total_count;
       this.itemOffset = result.pagination.offset;
-      console.log('result ', result);
     });
   }
 
