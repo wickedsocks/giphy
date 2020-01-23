@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ImageCardListComponent } from './image-card-list.component';
+import { ImageCardComponent } from '../image-card/image-card.component';
 
 describe('ImageCardListComponent', () => {
   let component: ImageCardListComponent;
@@ -8,9 +9,12 @@ describe('ImageCardListComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ImageCardListComponent ]
+      declarations: [
+        ImageCardListComponent,
+        ImageCardComponent
+      ]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

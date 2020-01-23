@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { IGiphyTrendingDataItem } from '../interfaces/common-interfaces';
+import { IGiphySearchDataItem } from '../interfaces/common-interfaces';
 
 @Component({
   selector: 'app-image-card-list',
@@ -7,7 +7,7 @@ import { IGiphyTrendingDataItem } from '../interfaces/common-interfaces';
   styleUrls: ['./image-card-list.component.scss']
 })
 export class ImageCardListComponent implements OnInit {
-  @Input() trendingGifs: IGiphyTrendingDataItem[];
+  @Input() trendingGifs: IGiphySearchDataItem[];
 
   constructor() { }
 

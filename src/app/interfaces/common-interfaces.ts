@@ -1,10 +1,10 @@
-export interface ITrendingResponse {
-  data: IGiphyTrendingDataItem[];
+export interface ISearchResponse {
+  data: IGiphySearchDataItem[];
   pagination: IPagination;
   meta: IMeta;
 }
 
-export interface IGiphyTrendingDataItem {
+export interface IGiphySearchDataItem {
   type: string;
   id: string;
   url: string;
@@ -22,24 +22,23 @@ export interface IGiphyTrendingDataItem {
   is_sticker: number;
   import_datetime: string;
   trending_datetime: string;
-  images: IGiphyTrendingDataImages;
-  user: IUser;
+  images: IGiphySearchDataImages;
   analytics: IAnalytics;
 }
 
-export interface IGiphyTrendingDataImagesWidthHeight {
+export interface IGiphySearchDataImagesWidthHeight {
   height: string;
   width: string;
 }
 
-export interface IGiphyTrendingDataImagesDefaultShape
-  extends IGiphyTrendingDataImagesWidthHeight,
+export interface IGiphySearchDataImagesDefaultShape
+  extends IGiphySearchDataImagesWidthHeight,
   IUrl {
   size: string;
 }
 
-export interface IGiphyTrendingDataImagesOriginalShape
-  extends IGiphyTrendingDataImagesDefaultShape {
+export interface IGiphySearchDataImagesOriginalShape
+  extends IGiphySearchDataImagesDefaultShape {
   frames: string;
   hash: string;
   mp4: string;
@@ -48,56 +47,55 @@ export interface IGiphyTrendingDataImagesOriginalShape
   webp_size: string;
 }
 
-export interface IGiphyTrendingDataImagesDefaultShapeWEBP
-  extends IGiphyTrendingDataImagesDefaultShape {
+export interface IGiphySearchDataImagesDefaultShapeWEBP
+  extends IGiphySearchDataImagesDefaultShape {
   webp: string;
   webp_size: string;
 }
 
-export interface IGiphyTrendingDataMP4Shape {
+export interface IGiphySearchDataMP4Shape {
   mp4: string;
   mp4_size: string;
 }
 
-export interface IGiphyTrendingDataImagesMP4
-  extends IGiphyTrendingDataImagesWidthHeight,
-  IGiphyTrendingDataMP4Shape {
+export interface IGiphySearchDataImagesMP4
+  extends IGiphySearchDataImagesWidthHeight,
+  IGiphySearchDataMP4Shape {
 }
 
-export interface IGiphyTrendingDataImagesMP4AndWEBPSize
-  extends IGiphyTrendingDataImagesMP4,
-  IGiphyTrendingDataImagesDefaultShapeWEBP,
-  IGiphyTrendingDataImagesDefaultShapeWEBP { }
+export interface IGiphySearchDataImagesMP4AndWEBPSize
+  extends IGiphySearchDataImagesMP4,
+  IGiphySearchDataImagesDefaultShapeWEBP { }
 
-export interface IGiphyTrendingDataImagesWStill
-  extends IGiphyTrendingDataImagesWidthHeight,
+export interface IGiphySearchDataImagesWStill
+  extends IGiphySearchDataImagesWidthHeight,
   IUrl {
 }
 
-export interface IGiphyTrendingDataImages {
-  downsized_large: IGiphyTrendingDataImagesDefaultShape;
-  fixed_height_small_still: IGiphyTrendingDataImagesDefaultShape;
-  original: IGiphyTrendingDataImagesOriginalShape;
-  fixed_height_downsampled: IGiphyTrendingDataImagesDefaultShapeWEBP;
-  downsized_still: IGiphyTrendingDataImagesDefaultShape;
-  fixed_height_still: IGiphyTrendingDataImagesDefaultShape;
-  downsized_medium: IGiphyTrendingDataImagesDefaultShape;
-  downsized: IGiphyTrendingDataImagesDefaultShape;
-  preview_webp: IGiphyTrendingDataImagesDefaultShape;
-  original_mp4: IGiphyTrendingDataImagesMP4;
-  fixed_height_small: IGiphyTrendingDataImagesMP4AndWEBPSize;
-  fixed_height: IGiphyTrendingDataImagesMP4AndWEBPSize;
-  downsized_small: IGiphyTrendingDataImagesMP4;
-  preview: IGiphyTrendingDataImagesMP4;
-  fixed_width_downsampled: IGiphyTrendingDataImagesMP4AndWEBPSize;
-  fixed_width_small_still: IGiphyTrendingDataImagesDefaultShape;
-  fixed_width_small: IGiphyTrendingDataImagesMP4AndWEBPSize;
-  original_still: IGiphyTrendingDataImagesDefaultShape;
-  fixed_width_still: IGiphyTrendingDataImagesDefaultShape;
-  looping: IGiphyTrendingDataMP4Shape;
-  fixed_width: IGiphyTrendingDataImagesMP4AndWEBPSize;
-  preview_gif: IGiphyTrendingDataImagesDefaultShape;
-  '480w_still': IGiphyTrendingDataImagesWStill;
+export interface IGiphySearchDataImages {
+  downsized_large: IGiphySearchDataImagesDefaultShape;
+  fixed_height_small_still: IGiphySearchDataImagesDefaultShape;
+  original: IGiphySearchDataImagesOriginalShape;
+  fixed_height_downsampled: IGiphySearchDataImagesDefaultShapeWEBP;
+  downsized_still: IGiphySearchDataImagesDefaultShape;
+  fixed_height_still: IGiphySearchDataImagesDefaultShape;
+  downsized_medium: IGiphySearchDataImagesDefaultShape;
+  downsized: IGiphySearchDataImagesDefaultShape;
+  preview_webp: IGiphySearchDataImagesDefaultShape;
+  original_mp4: IGiphySearchDataImagesMP4;
+  fixed_height_small: IGiphySearchDataImagesMP4AndWEBPSize;
+  fixed_height: IGiphySearchDataImagesMP4AndWEBPSize;
+  downsized_small: IGiphySearchDataImagesMP4;
+  preview: IGiphySearchDataImagesMP4;
+  fixed_width_downsampled: IGiphySearchDataImagesDefaultShapeWEBP;
+  fixed_width_small_still: IGiphySearchDataImagesDefaultShape;
+  fixed_width_small: IGiphySearchDataImagesMP4AndWEBPSize;
+  original_still: IGiphySearchDataImagesDefaultShape;
+  fixed_width_still: IGiphySearchDataImagesDefaultShape;
+  looping: IGiphySearchDataMP4Shape;
+  fixed_width: IGiphySearchDataImagesMP4AndWEBPSize;
+  preview_gif: IGiphySearchDataImagesDefaultShape;
+  '480w_still': IGiphySearchDataImagesWStill;
 }
 
 export interface IUser {
@@ -113,7 +111,7 @@ export interface IUser {
 export interface IAnalytics {
   onload: IUrl;
   onclick: IUrl;
-  onset: IUrl;
+  onsent: IUrl;
 }
 
 

@@ -10,8 +10,8 @@ export class CommonService {
 
   countAvailablePaginationPages(offset, currentItemCount, paginationButtonsAmount) {
     const halfPaginationButtonsAmount = paginationButtonsAmount / 2;
-    const middlePageNumebr = Math.round((offset / currentItemCount) - halfPaginationButtonsAmount);
-    return middlePageNumebr <= 0 ? 0 : middlePageNumebr;
+    const middlePageNumber = Math.round((offset / currentItemCount) - halfPaginationButtonsAmount);
+    return middlePageNumber <= 0 ? 0 : middlePageNumber;
   }
 
 }

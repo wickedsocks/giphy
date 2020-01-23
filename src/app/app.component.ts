@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { GiphyService } from './services/giphy.service';
-import { IGiphyTrendingDataItem, ITrendingResponse } from './interfaces/common-interfaces';
+import { IGiphySearchDataItem, ISearchResponse } from './interfaces/common-interfaces';
 
 @Component({
   selector: 'app-root',
@@ -8,7 +8,7 @@ import { IGiphyTrendingDataItem, ITrendingResponse } from './interfaces/common-i
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
-  public trendingGifs: IGiphyTrendingDataItem[];
+  public trendingGifs: IGiphySearchDataItem[];
   public itemCountDefault = 9;
   public totalCount: number;
   public itemOffset: number;
@@ -31,10 +31,11 @@ export class AppComponent implements OnInit {
     if (query === '') {
       reassignedQuery = this.defaultQuery;
     }
-    this.giphyService.searchForGifs(limit, reassignedQuery, offset).subscribe((result: ITrendingResponse) => {
+    this.giphyService.searchForGifs(limit, reassignedQuery, offset).subscribe((result: ISearchResponse) => {
       this.trendingGifs = result.data;
       this.totalCount = result.pagination.total_count;
       this.itemOffset = result.pagination.offset;
+      console.log('result ', result);
     });
   }
 

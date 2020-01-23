@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { IGiphyTrendingDataItem } from '../interfaces/common-interfaces';
+import { IGiphySearchDataItem } from '../interfaces/common-interfaces';
 
 @Component({
   selector: 'app-image-card',
@@ -7,7 +7,7 @@ import { IGiphyTrendingDataItem } from '../interfaces/common-interfaces';
   styleUrls: ['./image-card.component.scss']
 })
 export class ImageCardComponent implements OnInit {
-  @Input() image: IGiphyTrendingDataItem;
+  @Input() image: IGiphySearchDataItem;
 
   constructor() { }
 

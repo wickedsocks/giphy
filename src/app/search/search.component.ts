@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, OnDestroy } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { Subscription } from 'rxjs';
 import { debounceTime } from 'rxjs/operators';
@@ -8,7 +8,7 @@ import { debounceTime } from 'rxjs/operators';
   templateUrl: './search.component.html',
   styleUrls: ['./search.component.scss']
 })
-export class SearchComponent implements OnInit {
+export class SearchComponent implements OnInit, OnDestroy {
   @Output() searchQuery = new EventEmitter<string>();
   public firstSearchControl = new FormControl();
   public inputValue = '';
@@ -23,5 +23,11 @@ export class SearchComponent implements OnInit {
         this.inputValue = newValue;
         this.searchQuery.emit(this.inputValue);
       });
+  }
+
+  ngOnDestroy() {
+    if (this.searchControl$) {
+      this.searchControl$.unsubscribe();
+    }
   }
 }
